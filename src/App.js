@@ -71,10 +71,8 @@ function App() {
               </button>
             </div>
           </div>
-            <ArticleList articles={articles} />
             {showForm && (<Form insertedArticle={insertedArticle}/>)}
         </div>
-        <ArticleList articles={articles} />
       
 
     </>

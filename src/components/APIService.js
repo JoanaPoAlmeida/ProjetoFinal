@@ -4,7 +4,7 @@ export default class APIService{
 	// Insert an article
 	
 	static InsertArticle(body){
-		return fetch(`http://localhost:5000/add`,{
+		return fetch(`http://localhost:5000/langDetect`,{
       		'method':'POST',
       		 headers : {
       		'Content-Type':'application/json'
