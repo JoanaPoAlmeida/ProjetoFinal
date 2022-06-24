@@ -1,6 +1,7 @@
 from flask import current_app,jsonify,request, Flask
 from app import create_app,db
 from models import Articles,articles_schema,article_schema
+from gensim.summarization import keywords
 import pyodbc
 from langdetect import detect
 
@@ -22,31 +23,6 @@ def articles():
 	return jsonify(results)
 
 #Falta criar rotas para cada serviço e associa-las as paginas
-@app.route("/add", methods=["POST"], strict_slashes=False)
-def add_articles():
-
-	body = request.json['body']
-	
-
-	article = Articles(
-		body=body
-		)
-	
-	test = summarize(article.body, split=True)
-	print(test)
-	db.session.add(article)
-	db.session.commit()
-
-	return article_schema.jsonify(article)
-
-@app.post("/POSTlangDetect")
-def postlang():
-	body = request.json['body'] #isto ta a funcionar mas agora eu queria enviar para o utilizador o texto analisado, mas acho
-	#que nao é possivel fazer isso sem base de dados
-	#mas se usar base de dados nao ha como saber qual linha é do utilizador
-	send = "EU QUERIA QUE DESSE PARA FAZER O RETRIEVE DOS DADOS DO INPUT DO UTILIZADOR AQUI"
-	print(body)
-	return body
 
 body = ""
 @app.route("/langDetect", methods=['GET', 'POST'])
@@ -61,8 +37,24 @@ def lang():
 	lang = detect(body)
 	print("this is lang", lang)
 	print("this is body", body)
-	return jsonify(lang)
 
+	return jsonify(lang)
+"""
+@app.route("/keywords", methods=['GET', 'POST'])
+def lang():
+
+	if request.method == 'POST':
+		global body
+		body = request.json['body']
+
+	if body == "":
+		return ""
+	key = keywords(body)
+	print("this is keywords", key)
+	print("this is body", body)
+
+	return jsonify(key)
+"""
 
 #isto em baixo afinal nao é preciso
 @app.route("/con")

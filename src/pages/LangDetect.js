@@ -1,15 +1,15 @@
 import React from 'react'
-import Form from 'react-bootstrap/Form'
-import { Button } from 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { useState,useEffect } from 'react'
+import Form from '../components/Form'
+
+
 function LangDetect() {
   //set default value to null
   let [langdetect, setlangdetect] = useState(null);
+  const [showForm, setShowForm] = useState(true);
 
   //fetch data from flask and set it to langdetect
-  //PROBLEMA: ELE NAO TA A ATUALIZAR OS DADOS QUANDO RECECEBE UM NOVO INPUT
-  //se atualizar a pagina aparece o codigo do input anterior
   useEffect(()=>{
     fetch('http://localhost:5000/langDetect',{
       'methods':'GET',
@@ -20,22 +20,31 @@ function LangDetect() {
     })
     .then(response => response.json())
     .then(response => setlangdetect(response))
-    .then(messages => console.log(messages))
     .catch(error => console.log(error))
   },[])
+
+  //apresentar a variavel apenas se tiver conteudo ou apresentar a variavel depois do post (ver como fazer isso)
+  function showGet(){
+    if(langdetect ){
+      console.log("this is langdetect in react", langdetect)
+      return langdetect;
+    }else{
+      return "";
+    }
+  }
   
   console.log(langdetect)
 
   return (
     <>
-      <form>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-        <Form.Label>Paste your text here </Form.Label>
-        <Form.Control as="textarea" rows={3}  />
-        </Form.Group>
-        {langdetect}
-      </form>
-      
+    <div className="container">
+      <div className="row p-3">
+        <div className="text-center"> 
+          {showForm && (<Form />)}
+          {showGet}
+        </div>
+      </div>
+    </div>
     </>
       
     

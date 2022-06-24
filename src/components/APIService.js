@@ -1,9 +1,9 @@
 
 export default class APIService{
 
-	// Insert an article
+	// Insert a Text
 	
-	static InsertArticle(body){
+	static InsertText(body){
 		return fetch(`http://localhost:5000/langDetect`,{
       		'method':'POST',
       		 headers : {
@@ -14,6 +14,8 @@ export default class APIService{
 	.then(response => response.json())
 	.catch(error => console.log(error))
 	}
+
+	
 
 	//adicionar metodos aqui para os serviços de post
 

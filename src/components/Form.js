@@ -4,25 +4,29 @@ import APIService from '../components/APIService'
 
 const Form = (props) => {
   const [body, setBody] = useState('')
-
-  const insertArticle = () =>{
-    APIService.InsertArticle({body})
-    .then((response) => props.insertedArticle(response))
+  
+  const insertText = () =>{
+    APIService.InsertText({body})
+    .then((response) => props.insertedText(response))
+    .then((response) => console.log("This is from insertText",response))
     .catch(error => console.log('error',error))
   }
 
+  //insere o texto, limpa o form e atualiza a pagina
   const handleSubmit=(event)=>{ 
     event.preventDefault()
-    insertArticle()
+    insertText()
     setBody('')
+    window.location.reload(false);
   }
 
+
   return (
-    <div className="shadow p-4">
+    
 
-        <form onSubmit = {handleSubmit} >
+        <form onSubmit = {handleSubmit}>
 
-          <label htmlFor="body" className="form-label">Body</label>
+          <label htmlFor="body" className="form-label">Insert your text here</label>
           <textarea 
           className="form-control" 
           placeholder ="Enter body" 
@@ -36,12 +40,12 @@ const Form = (props) => {
           <button 
           className="btn btn-primary mt-2"
           >
-          Publish article</button>
+          Send</button>
           
         </form>
               
 
-    </div>
+    
   )}
 
 export default Form;
