@@ -25,7 +25,7 @@ def articles():
 #Falta criar rotas para cada serviço e associa-las as paginas
 
 body = ""
-@app.route("/langDetect", methods=['GET', 'POST'])
+@app.route("/langDetect", methods=['POST'])
 def lang():
 
 	if request.method == 'POST':
@@ -34,27 +34,28 @@ def lang():
 
 	if body == "":
 		return ""
-	lang = detect(body)
-	print("this is lang", lang)
-	print("this is body", body)
+	else:
+		lang = detect(body)
+		print("this is lang", lang)
+		print("this is body", body)
 
-	return jsonify(lang)
-"""
-@app.route("/keywords", methods=['GET', 'POST'])
-def lang():
+		return jsonify(lang)
 
-	if request.method == 'POST':
-		global body
-		body = request.json['body']
 
-	if body == "":
+
+keywrds = ""
+@app.route("/keywords", methods=['POST'])
+def keywords():
+	global keywrds
+	keywrds = request.json['body']
+	if keywrds == "":
 		return ""
-	key = keywords(body)
-	print("this is keywords", key)
-	print("this is body", body)
+	else:
+		key = keywords(keywrds)
+		print("this is keywords", key)
+		print("this is body", keywrds)
+		return jsonify(key)
 
-	return jsonify(key)
-"""
 
 #isto em baixo afinal nao é preciso
 @app.route("/con")

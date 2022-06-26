@@ -7,8 +7,8 @@ const Form = (props) => {
   
   const insertText = () =>{
     APIService.InsertText({body})
-    .then((response) => props.insertedText(response))
-    .then((response) => console.log("This is from insertText",response))
+    //.then((response) => props.insertedText(response))
+    .then((response) => console.log("This is from Form.js",response))
     .catch(error => console.log('error',error))
   }
 
@@ -17,7 +17,7 @@ const Form = (props) => {
     event.preventDefault()
     insertText()
     setBody('')
-    window.location.reload(false);
+    //window.location.reload(false);
   }
 
 

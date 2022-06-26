@@ -17,16 +17,16 @@ const Sidebar = ({ isOpen, toggle}) => {
         </Icon>
         <SidebarWrapper>
             <SidebarMenu>
-               <SidebarLink to="Entity" onClick={toggle}>
+               <SidebarLink to="/Entity" onClick={toggle}>
                     Entity
                 </SidebarLink> 
-                <SidebarLink to="Keywords" onClick={toggle}>
+                <SidebarLink to="/Keywords" onClick={toggle}>
                     Keywords
                 </SidebarLink>
-                <SidebarLink to="LangDetect" onClick={toggle}>
+                <SidebarLink to="/LangDetect" onClick={toggle}>
                     Language Detect
                 </SidebarLink>
-                <SidebarLink to="POS" onClick={toggle}>
+                <SidebarLink to="/POS" onClick={toggle}>
                     Part of Speech
                 </SidebarLink>
                 <SidebarLink to='/Sum' onClick={toggle}>

@@ -11,9 +11,6 @@ import POS from './pages/POS';
 import Sum from './pages/Sum';
 import LangDetect from './pages/LangDetect';
 import Start from './pages/start';
-import ArticleList from './components/ArticleList'
-import Form from './components/Form'
-import { Link } from 'react-router-dom'
 
 function App() {
   return (
