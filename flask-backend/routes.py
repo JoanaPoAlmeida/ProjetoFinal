@@ -45,13 +45,14 @@ def lang():
 
 keywrds = ""
 @app.route("/keywords", methods=['POST'])
-def keywords():
+def keyword():
 	global keywrds
 	keywrds = request.json['body']
 	if keywrds == "":
 		return ""
 	else:
-		key = keywords(keywrds)
+		print(keywrds)
+		key = keywords(keywrds).replace('\n','#')
 		print("this is keywords", key)
 		print("this is body", keywrds)
 		return jsonify(key)
