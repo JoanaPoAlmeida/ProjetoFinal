@@ -1,7 +1,5 @@
 //yarn start
 import './App.css';
-import { useState,useEffect } from 'react'
-import axios from "axios";
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 //Switch --> Routes
 import Home from './pages';
@@ -11,11 +9,15 @@ import POS from './pages/POS';
 import Sum from './pages/Sum';
 import LangDetect from './pages/LangDetect';
 import Start from './pages/start';
+import Footer from './components/Footer'
+
 
 function App() {
+
   return (
     <>
       <Router>
+        
         <Home />
         <Routes>
           <Route path='/' element={<Start/>}/>
@@ -26,6 +28,8 @@ function App() {
           <Route path='/Sum' element={<Sum/>}/>
         </Routes>
       </Router>
+
+      
       
     </>
   );

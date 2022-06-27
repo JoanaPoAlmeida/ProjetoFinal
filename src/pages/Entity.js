@@ -1,54 +1,84 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { useState,useEffect } from 'react'
-import ArticleList from '../components/ArticleList'
-import Form from '../components/Form'
-
+import APIService from '../components/APIService'
+import '../App.css'
 function Entity() {
 
-  const [articles, setArticles] = useState([]);
-  const [showForm, setShowForm] = useState(false);
+  
+  //set default value to null
+  const [ResFromServer, setResFromServer] = useState("");
+  const [showText, setShowText] = useState("");
+  const [body, setBody] = useState('')
 
-  // Modify the current state by setting the new data to
-  // the response from the backend
-  useEffect(()=>{
-    fetch('http://localhost:5000/Articles',{
+  //fetch data from flask and set it to langdetect
+  /*useEffect((props)=>{
+    fetch('http://localhost:5000/keywords',{
       'methods':'GET',
       headers : {
-        'Content-Type':'application/json'
+        'Content-Type':'application/json',
+        'Accept': 'application/json'
       }
     })
     .then(response => response.json())
-    .then(response => setArticles(response))
     .catch(error => console.log(error))
+  },[])*/
 
-  },[])
-
-  const insertedArticle = (article) =>{
-    const new_articles = [...articles,article]
-    setArticles(new_articles)
+  const insertText = () =>{
+    APIService.InsertKeywords({body})
+    .then((response) => setShowText(response))
+    .catch(error => console.log('error',error))
   }
 
-  const toggleShowForm = () => {
-    setShowForm(!showForm);
+  //insere o texto, limpa o form e atualiza a pagina
+  const handleSubmit=(event)=>{ 
+    event.preventDefault()
+    insertText()
+    //setBody('')
+    console.log("this is from handleSubmit", showText)
+    //window.location.reload(false);
   }
+  const TextArea = (e) => {
+    setBody('e.target.value')
+    setShowText("")
+  }
+
+
   return (
-    <div>
-      <div className="Entity">
-        <div className="container">
-          <div className="row p-3">
-            <div className="text-center">
-              <h1>Post data from React to Flask.</h1>
-              {toggleShowForm}
-              <button onClick={toggleShowForm} className="btn btn-primary"> Write an article
-              <i className="bi bi-pencil-square m-2"></i>
-              </button>
-            </div>
-          </div>
-          <ArticleList articles={articles} />
-          {showForm && (<Form insertedArticle={insertedArticle}/>)}
+    <div classname="body">
+    <div className="container">
+      <div className="row p-2">
+        <p>The Entity is ... </p>
+        <p></p>
+      </div>
+      <div className="row p-3">
+        <div className="text-center"> 
+          {/*showForm && (<Form insertedText={results}/>)*/}
+          {/*showGet && (<p>The TextCode for this language is: {langdetect}</p>)*/}
+          <form onSubmit = {handleSubmit}>
+
+          <label htmlFor="body" className="form-label">Insert your text here</label>
+          <textarea 
+          className="form-control" 
+          placeholder ="Enter body" 
+          rows='6'
+          value={body}
+          onChange={TextArea}
+          required
+          >
+          </textarea>
+
+          <button 
+          className="btn btn-primary mt-2"
+          >
+          Send</button>
+        </form>
+        <div className="row p-4">
+          <h3>Results: {showText} </h3>
+        </div>
         </div>
       </div>
+    </div>
     </div>
 
   )
