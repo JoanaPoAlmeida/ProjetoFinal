@@ -2,6 +2,8 @@ from flask import current_app,jsonify,request, Flask
 from app import create_app,db
 from models import Articles,articles_schema,article_schema
 from gensim.summarization import keywords
+from gensim.summarization import summarize
+from polyglot.text import Text
 import pyodbc
 from langdetect import detect
 
@@ -58,30 +60,49 @@ def keyword():
 		return jsonify(key)
 
 
-#isto em baixo afinal nao é preciso
-@app.route("/con")
-def con():
-	conn = pyodbc.connect('Driver={SQL Server};'
-                    	'Server=DESKTOP-1F9L5HH\SQLEXPRESS01;'
-                      	'Database=FinalProj;'
-                      	'Trusted_Connection=yes;')
-
-	cursor = conn.cursor()
-	a=cursor.execute('SELECT * FROM UserInput')
-
-
-	for row in a:
-		if(row.service == 'summarize'):
-			lang = detect(row.body)
-			
-			return(lang)
+summ = ""
+@app.route("/summary", methods=['POST'])
+def sum():
+	global summ
+	summ = request.json['body']
+	if summ == "":
+		return ""
+	else:
+		print(summ)
+		summar = summarize(summ)
+		print(summar)
+		return jsonify(summar)
 
 
+summ = ""
+@app.route("/entity", methods=['POST'])
+def NER():
+	global summ
+	summ = request.json['body']
+	if summ == "":
+		return ""
+	else:
+		text = Text(summ, hint_language_code = detect(summ))
+		aux = ""
+		for entity in text.entities:
+			aux = aux + str(entity.tag) + " " + str(entity) + ""
+		print(summ)
+		print(aux)
+		return jsonify(aux)
 	
-	return "hihi"
-
-
-	
+summ = ""
+@app.route("/POS", methods=['POST'])
+def POS():
+	global summ
+	summ = request.json['body']
+	if summ == "":
+		return ""
+	else:
+		txt = Text(summ)
+		aux = txt.pos_tags
+		print(summ)
+		print(aux)
+		return jsonify(aux)
 	
 
 

@@ -26,8 +26,41 @@ export default class APIService{
 	.then(response => response.json())
 	.catch(error => console.log(error))
 	}
-	
 
-	//adicionar metodos aqui para os serviços de post
+	static InsertSummary(body){
+		return fetch(`http://localhost:5000/summary`,{
+      		'method':'POST',
+      		 headers : {
+      		'Content-Type':'application/json'
+      },
+      body:JSON.stringify(body)
+    })
+	.then(response => response.json())
+	.catch(error => console.log(error))
+	}
+	
+	static InsertEntity(body){
+		return fetch(`http://localhost:5000/entity`,{
+      		'method':'POST',
+      		 headers : {
+      		'Content-Type':'application/json'
+      },
+      body:JSON.stringify(body)
+    })
+	.then(response => response.json())
+	.catch(error => console.log(error))
+	}
+
+	static InsertPOS(body){
+		return fetch(`http://localhost:5000/POS`,{
+      		'method':'POST',
+      		 headers : {
+      		'Content-Type':'application/json'
+      },
+      body:JSON.stringify(body)
+    })
+	.then(response => response.json())
+	.catch(error => console.log(error))
+	}
 
 }

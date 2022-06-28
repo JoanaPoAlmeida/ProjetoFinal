@@ -2,6 +2,15 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { useState,useEffect } from 'react'
 import APIService from '../components/APIService'
+import JSONPretty from 'react-json-pretty';
+import 'react-json-pretty/themes/monikai.css';
+import '../App.css';
+
+
+var JSONPrettyMon = require('react-json-pretty/dist/monikai');
+
+
+
 function POS() {
 
   
@@ -10,21 +19,9 @@ function POS() {
   const [showText, setShowText] = useState("");
   const [body, setBody] = useState('')
 
-  //fetch data from flask and set it to langdetect
-  /*useEffect((props)=>{
-    fetch('http://localhost:5000/keywords',{
-      'methods':'GET',
-      headers : {
-        'Content-Type':'application/json',
-        'Accept': 'application/json'
-      }
-    })
-    .then(response => response.json())
-    .catch(error => console.log(error))
-  },[])*/
 
   const insertText = () =>{
-    APIService.InsertKeywords({body})
+    APIService.InsertPOS({body})
     .then((response) => setShowText(response))
     .catch(error => console.log('error',error))
   }
@@ -38,7 +35,7 @@ function POS() {
     //window.location.reload(false);
   }
   const TextArea = (e) => {
-    setBody('e.target.value')
+    setBody(e.target.value)
     setShowText("")
   }
 
@@ -72,7 +69,10 @@ function POS() {
           Send</button>
         </form>
         <div className="row p-4">
-          <h3>Results: {showText} </h3>
+          <label className="form-label">Results:</label>
+          <div className="form-control">
+            <p className='json'>{JSON.stringify(showText)}</p>
+          </div>
         </div>
         </div>
       </div>

@@ -58,9 +58,10 @@ function Keywords() {
           >
           Send</button>
         </form>
-        <div className="row p-4">
-          <h3>The keywords are: {showText} </h3>
-        </div>
+        <label className="form-label">Results:</label>
+          <div className="form-control">
+            <p>{showText}</p> 
+          </div>
         </div>
       </div>
     </div>

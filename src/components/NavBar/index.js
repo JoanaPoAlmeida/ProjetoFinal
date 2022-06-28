@@ -9,8 +9,8 @@ import {
   NavBtnLink,
   MobileIcon
 } from './NavbarElements';
+import '../../App.css'
 
-//1:07:14 https://www.youtube.com/watch?v=Nl54MJDR2p8&t=0s
 const Navbar = ({ toggle }) => {
   return (
     <>
@@ -38,7 +38,15 @@ const Navbar = ({ toggle }) => {
             Summarization
           </NavLink>
           {/* Second Nav */}
-          {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
+          <div className='SecondNav'>
+            <NavLink to='/Help' activestyle="true">
+              Help
+            </NavLink>
+            <NavLink to='/Team' activestyle="true">
+              Team
+            </NavLink>
+          </div>
+          
         </NavMenu>
       </Nav>
     </>

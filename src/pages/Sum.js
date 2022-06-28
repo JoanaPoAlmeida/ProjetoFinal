@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { useState,useEffect } from 'react'
 import APIService from '../components/APIService'
 import Footer from '../components/Footer'
+import { FaLaravel } from 'react-icons/fa'
 
 function Sum() {
 
@@ -13,7 +14,7 @@ function Sum() {
   const [body, setBody] = useState('')
 
   const insertText = () =>{
-    APIService.InsertKeywords({body})
+    APIService.InsertSummary({body})
     .then((response) => setShowText(response))
     .catch(error => console.log('error',error))
   }
@@ -27,7 +28,7 @@ function Sum() {
     //window.location.reload(false);
   }
   const TextArea = (e) => {
-    setBody('e.target.value')
+    setBody(e.target.value)
     setShowText("")
   }
 
@@ -60,13 +61,14 @@ function Sum() {
           >
           Send</button>
         </form>
-        <div className="row p-4">
-          <h3>Results: {showText} </h3>
-        </div>
+          <label className="form-label">Results:</label>
+          <div className="form-control">
+            <p>{showText}</p> 
+          </div>
         </div>
       </div>
     </div>
-    <Footer />
+    
     </>
   )
 }

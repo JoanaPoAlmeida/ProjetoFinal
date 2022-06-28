@@ -11,21 +11,8 @@ function Entity() {
   const [showText, setShowText] = useState("");
   const [body, setBody] = useState('')
 
-  //fetch data from flask and set it to langdetect
-  /*useEffect((props)=>{
-    fetch('http://localhost:5000/keywords',{
-      'methods':'GET',
-      headers : {
-        'Content-Type':'application/json',
-        'Accept': 'application/json'
-      }
-    })
-    .then(response => response.json())
-    .catch(error => console.log(error))
-  },[])*/
-
   const insertText = () =>{
-    APIService.InsertKeywords({body})
+    APIService.InsertEntity({body})
     .then((response) => setShowText(response))
     .catch(error => console.log('error',error))
   }
@@ -39,7 +26,7 @@ function Entity() {
     //window.location.reload(false);
   }
   const TextArea = (e) => {
-    setBody('e.target.value')
+    setBody(e.target.value)
     setShowText("")
   }
 
@@ -48,7 +35,7 @@ function Entity() {
     <div classname="body">
     <div className="container">
       <div className="row p-2">
-        <p>The Entity is ... </p>
+        <p>The Named-entity recognition is ... </p>
         <p></p>
       </div>
       <div className="row p-3">
@@ -73,9 +60,10 @@ function Entity() {
           >
           Send</button>
         </form>
-        <div className="row p-4">
-          <h3>Results: {showText} </h3>
-        </div>
+          <label className="form-label">Results:</label>
+          <div className="form-control">
+            <p>{showText}</p> 
+          </div>
         </div>
       </div>
     </div>

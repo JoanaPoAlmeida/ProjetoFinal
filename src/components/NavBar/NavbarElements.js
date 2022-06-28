@@ -26,7 +26,12 @@ export const NavLink = styled(Link)`
   &.active {
     color: #15cdfc;
   }
+  &.SecondNav {
+    color: red;
+    align-items: right;
+  }
 `;
+
 
 export const Bars = styled(FaBars)`
   display: none;
