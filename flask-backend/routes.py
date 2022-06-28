@@ -9,19 +9,6 @@ from langdetect import detect
 # Create an application instance
 app = create_app()
 
-# Define a route to fetch the avaialable articles
-@app.route('/')
-def hello():
-    return 'Hello, World!'
-
-@app.route("/articles", methods=["GET"], strict_slashes=False)
-def articles():
-
-	articles = Articles.query.all()
-	results = articles_schema.dump(articles)
-
-	return jsonify(results)
-
 #Falta criar rotas para cada serviço e associa-las as paginas
 
 body = ""
