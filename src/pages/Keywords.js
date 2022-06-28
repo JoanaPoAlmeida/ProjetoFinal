@@ -24,7 +24,7 @@ function Keywords() {
     console.log("this is from handleSubmit", showText)
   }
   const TextArea = (e) => {
-    setBody('e.target.value')
+    setBody(e.target.value)
     setShowText("")
   }
 
