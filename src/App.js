@@ -9,7 +9,10 @@ import POS from './pages/POS';
 import Sum from './pages/Sum';
 import LangDetect from './pages/LangDetect';
 import Start from './pages/start';
-import Footer from './components/Footer'
+import Team from './pages/Team';
+import Help from './pages/Help';
+import { FooterContainer } from './containers/footer'
+import { GlobalStyles } from './global-styles';
 
 
 function App() {
@@ -26,9 +29,11 @@ function App() {
           <Route path='/Keywords' element={<Keywords/>}/>
           <Route path='/LangDetect' element={<LangDetect/>}/>
           <Route path='/Sum' element={<Sum/>}/>
+          <Route path='/Team' element={<Team/>}/>
+          <Route path='/Help' element={<Help/>}/>
         </Routes>
       </Router>
-
+      <FooterContainer />
       
       
     </>

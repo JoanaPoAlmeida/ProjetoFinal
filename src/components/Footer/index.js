@@ -1,77 +1,26 @@
-import React from "react";
-import {
-Box,
-Container,
-Row,
-Column,
-FooterLink,
-Heading,
-} from "./FooterStyles";
+import React from 'react';
+import { Container, Wrapper, Row, Column, Link, Title } from './FooterStyles';
 
-const Footer = () => {
-return (
-	<Box>
-	<h1 style={{ color: "green",
-				textAlign: "center",
-				marginTop: "-50px" }}>
-		GeeksforGeeks: A Computer Science Portal for Geeks
-	</h1>
-	<Container>
-		<Row>
-		<Column>
-			<Heading>ABOUT US</Heading>
-			<FooterLink href="#">Aim</FooterLink>
-			<FooterLink href="#">Vision</FooterLink>
-			<FooterLink href="#">Testimonials</FooterLink>
-		</Column>
-		<Column>
-			<Heading>Services</Heading>
-			<FooterLink href="#">Writing</FooterLink>
-			<FooterLink href="#">Internships</FooterLink>
-			<FooterLink href="#">Coding</FooterLink>
-			<FooterLink href="#">Teaching</FooterLink>
-		</Column>
-		<Column>
-			<Heading>Contact Us</Heading>
-			<FooterLink href="#">Uttar Pradesh</FooterLink>
-			<FooterLink href="#">Ahemdabad</FooterLink>
-			<FooterLink href="#">Indore</FooterLink>
-			<FooterLink href="#">Mumbai</FooterLink>
-		</Column>
-		<Column>
-			<Heading>Social Media</Heading>
-			<FooterLink href="#">
-			<i className="fab fa-facebook-f">
-				<span style={{ marginLeft: "10px" }}>
-				Facebook
-				</span>
-			</i>
-			</FooterLink>
-			<FooterLink href="#">
-			<i className="fab fa-instagram">
-				<span style={{ marginLeft: "10px" }}>
-				Instagram
-				</span>
-			</i>
-			</FooterLink>
-			<FooterLink href="#">
-			<i className="fab fa-twitter">
-				<span style={{ marginLeft: "10px" }}>
-				Twitter
-				</span>
-			</i>
-			</FooterLink>
-			<FooterLink href="#">
-			<i className="fab fa-youtube">
-				<span style={{ marginLeft: "10px" }}>
-				Youtube
-				</span>
-			</i>
-			</FooterLink>
-		</Column>
-		</Row>
-	</Container>
-	</Box>
-);
+export default function Footer({ children, ...restProps }) {
+  return <Container {...restProps}>{children}</Container>;
+}
+
+Footer.Wrapper = function FooterWrapper({children, ...restProps}) {
+  return <Wrapper {...restProps}>{children}</Wrapper>
+}
+
+Footer.Row = function FooterRow({ children, ...restProps }) {
+  return <Row {...restProps}>{children}</Row>;
 };
-export default Footer;
+
+Footer.Column = function FooterColumn({ children, ...restProps }) {
+  return <Column {...restProps}>{children}</Column>;
+};
+
+Footer.Link = function FooterLink({ children, ...restProps }) {
+  return <Link {...restProps}>{children}</Link>;
+};
+
+Footer.Title = function FooterTitle({ children, ...restProps }) {
+  return <Title {...restProps}>{children}</Title>;
+};

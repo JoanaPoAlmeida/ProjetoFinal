@@ -1,64 +1,54 @@
 import styled from 'styled-components';
 
-export const Box = styled.div`
-padding: 80px 60px;
-background: #0d2240;
-position: fixed;
-bottom: 0;
-left: 0;
-right 0;
-width: 100%;
+export const Container = styled.div`
+  padding-top: 10pt;
+  padding-bottom: 10pt;
+  position:absolute;
+  left:0;
+  bottom:0;
+  right:0;
+  background: radial-gradient(circle, rgba(13, 34, 64, 1) 0%, rgba(19, 46, 84,1) 100%);
 
-
-@media (max-width: 1000px) {
-	padding: 70px 30px;
-}
+  @media (max-width: 1000px) {
+    padding: 70px 30px;
+  }
 `;
 
-export const Container = styled.div`
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	max-width: 1000px;
-	margin: 0 auto;
-	font-family: arial, helvetica, sans-serif;
-	/* background: red; */
+export const Wrapper = styled.div`
+    display: block;
+    justify-content: center;
+    max-width: 1000px;
+    margin-bottom: 2%;
+    background: red; 
 `
 
 export const Column = styled.div`
-display: flex;
-flex-direction: column;
-text-align: left;
-margin-left: 60px;
+  display: block;
+  flex-direction: column;
+  text-align: center;
+  margin-left: auto;
 `;
 
 export const Row = styled.div`
-display: grid;
-grid-template-columns: repeat(auto-fill,
-						minmax(185px, 1fr));
-grid-gap: 20px;
+  display: block;
+  grid-gap: 20x;
+  background: red;
 
-@media (max-width: 1000px) {
-	grid-template-columns: repeat(auto-fill,
-						minmax(200px, 1fr));
-}
+  @media (max-width: 1000px) {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
 `;
 
-export const FooterLink = styled.a`
-color: #fff;
-margin-bottom: 20px;
-font-size: 18px;
-text-decoration: none;
-
-&:hover {
-	color: green;
-	transition: 200ms ease-in;
-}
+export const Link = styled.a`
+  color: rgba(255, 255, 255, 0.90);;
+  margin-bottom: 0px;
+  font-size: 18px;
+  text-decoration: none;
 `;
 
-export const Heading = styled.p`
-font-size: 24px;
-color: #fff;
-margin-bottom: 40px;
-font-weight: bold;
+export const Title = styled.p`
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 40px;
+  font-weight: bold;
 `;

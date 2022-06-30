@@ -7,9 +7,12 @@ export const Nav = styled.nav`
   height: 80px;
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem calc((100vw - 1000px) / 2);
+  padding: 1rem calc((100vw - 1000px) / 2);
   z-index: 10;
 
+  &img {
+    height: 100%;
+  }
   /* Third Nav */
   /* justify-content: flex-start; */
 `;
@@ -19,12 +22,16 @@ export const NavLink = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
-  padding: 0 1rem;
-  height: 100%;
+  padding: 0 0.5rem;
+  height: 90%;
   cursor: pointer;
 
   &.active {
     color: #15cdfc;
+  }
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    color: #889aa5;
   }
   &.SecondNav {
     color: red;
@@ -68,7 +75,7 @@ export const NavMenu = styled.div`
 export const NavBtn = styled.nav`
   display: flex;
   align-items: center;
-  margin-right: 24px;
+  margin-right: 0;
 
   /* Third Nav */
   /* justify-content: flex-end;
@@ -81,9 +88,9 @@ export const NavBtn = styled.nav`
 
 export const NavBtnLink = styled(Link)`
   border-radius: 4px;
-  background: #256ce1;
+  background: #fefeff;
   padding: 10px 22px;
-  color: #fff;
+  color: #0d2240;
   outline: none;
   border: none;
   cursor: pointer;
@@ -95,7 +102,6 @@ export const NavBtnLink = styled(Link)`
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    background: #889aa5;
     color: #889aa5;
   }
 `;

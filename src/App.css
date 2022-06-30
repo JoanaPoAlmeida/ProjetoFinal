@@ -7,28 +7,22 @@
   padding: 0;
 }
 
+body, html {
+  margin-bottom: 20pt;
+}
+
 .App {
   min-height: 100vh;
-}
-
-.body {
-  background-color: #fffefe;
-}
-
-.text-center {
-  background-color: #f0f0f0;
-  color: #0d2240;
+  background-color: #fcf7f7;
 }
 
 div.container {
   margin-top: 5vh;
-  width: 90%;
+  margin-bottom: 5vh;
+  width: 80%;
   height: 30%;
   border-radius: 2px;
-  padding-left: 25px;
-  padding-top: 25px;
-  padding-right: 25px;
-  padding-bottom: 20px;
+  padding: 25px 25px 25px 20px;
   background-color: #F0F0F0;
   text-align: center;
   letter-spacing: 0.05em;
@@ -37,18 +31,35 @@ div.container {
   position: relative;
   text-decoration: none;
 }
+div.containerStart {
+  width: 80%;
+  height: 30%;
+  margin: 0 auto;
+  margin-top: 2%;
+  border-radius: 2px;
+  padding: 4rem 4rem 26rem 4rem;
+  background-color: #F0F0F0;
+  text-align: center;
+  letter-spacing: 0.05em;
+  line-height: 1.75;
+  outline: 0;
+  position: flex;
+  text-decoration: none;
+  z-index: 10;
+}
+
+div.row p-2,
+div.row p-3 {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
 
 p {
   font-size: 1.3em;
   display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-}
-
-p.languages {
-  font-size: 1em;
 }
 
 footer {
@@ -74,4 +85,105 @@ footer {
 
 .SecondNav.active {
   color: #15cdfc;
+}
+
+.upperCase {
+  font-size: 1.3em;
+  text-align: center;
+  font-family: arial, helvetica, sans-serif;
+  color: #0C2340;
+}
+
+h2 {
+  text-transform: none;
+  text-align: center;
+  padding-top: 2%;
+}
+
+.Card {
+  width: '18rem';
+  background-color: #0C2340;
+}
+
+.startImage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+.background {
+  background-color: #fefeff;
+  height: auto;
+}
+
+.row {
+  width: 96%;
+  max-width: 3500px;
+}
+
+.banner {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 auto;
+  padding-bottom: 30px;
+  text-align: center;
+}
+.banner-text { width: 100%; }
+.banner-text img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  width: 80%;
+}
+.banner-text h3 {
+  font: 18px/1.9em 'librebaskerville-regular', serif;
+  color: #0C2340;
+  margin: 0 auto;
+  padding-top: 0%;
+  width: 70%;
+}
+
+.banner-text h3 span,
+.banner-text h3 a {
+   color: #fff;
+}
+
+.banner-text hr {
+  width: 60%;
+  margin: 18px auto 24px auto;
+  border-color: #0C2340;
+  border-color: rgba(150, 150, 150, .1);
+}
+
+.social {
+  margin: 24px 0;
+  padding: 0;
+  font-size: 15pt;
+}
+.social li {
+  display: inline-block;
+  margin: 0 15px;
+  padding: 0;
+}
+.social li a { color: #0C2340 }
+.social li a:hover { color: #0762f9; }
+
+.button {
+  background: #0C2340;
+  display: inline-block;
+  text-decoration: none;
+  letter-spacing: 0;
+  color: #fefeff;
+  padding: 10px 10px;
+  margin-bottom: 18px;
+  cursor: pointer;
+  height: auto;
+  transition: all .2s ease-in-out;
+  border-radius: 4px;
+}
+.button:hover {
+  transition: all 0.2s ease-in-out;
+  color: #889aa5;
 }

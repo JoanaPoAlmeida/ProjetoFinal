@@ -7,7 +7,7 @@ import {
   NavMenu,
   NavBtn,
   NavBtnLink,
-  MobileIcon
+  MobileIcon,
 } from './NavbarElements';
 import '../../App.css'
 
@@ -23,7 +23,7 @@ const Navbar = ({ toggle }) => {
         </MobileIcon>
         <NavMenu>
           <NavLink to='/Entity' activestyle="true">
-            Entity
+            Named Entity Recognition
           </NavLink>
           <NavLink to='/Keywords' activestyle="true">
             Keywords
@@ -37,17 +37,17 @@ const Navbar = ({ toggle }) => {
           <NavLink to='/Sum' activestyle="true">
             Summarization
           </NavLink>
-          {/* Second Nav */}
-          <div className='SecondNav'>
-            <NavLink to='/Help' activestyle="true">
-              Help
-            </NavLink>
-            <NavLink to='/Team' activestyle="true">
-              Team
-            </NavLink>
-          </div>
-          
         </NavMenu>
+          {/* Second Nav */}
+          <NavBtn>
+            <NavBtnLink to='/Help' activestyle="true">
+              Help
+            </NavBtnLink>
+            <NavBtnLink to='/Team' activestyle="true">
+              Team
+            </NavBtnLink>
+          </NavBtn>
+        
       </Nav>
     </>
   );
