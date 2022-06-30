@@ -62,30 +62,10 @@ p {
   margin-inline-end: 0px;
 }
 
-footer {
-  position:absolute;
-  left:0;
-  bottom:0;
-  right:0;
-}
-
 .json {
   white-space: "pre-wrap";
 }
 
-.SecondNav {
-  color: #fff;
-  display: flex;
-  align-items: right;
-  text-decoration: none;
-  padding: 0 1rem;
-  height: 100%;
-  cursor: pointer;
-}
-
-.SecondNav.active {
-  color: #15cdfc;
-}
 
 .upperCase {
   font-size: 1.3em;
@@ -114,7 +94,6 @@ h2 {
 
 .background {
   background-color: #fefeff;
-  height: auto;
 }
 
 .row {

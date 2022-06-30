@@ -4,6 +4,7 @@ import { useState,useEffect } from 'react'
 import APIService from '../components/APIService'
 import Footer from '../components/Footer'
 import { FaLaravel } from 'react-icons/fa'
+import Container from 'react-bootstrap/Container'
 
 function Sum() {
 
@@ -34,7 +35,7 @@ function Sum() {
 
   return (
     <>
-    <div className="container">
+    <Container>
       <div className="row p-2">
         <p>The gemsin.summarization is a </p>
         <p></p>
@@ -67,8 +68,7 @@ function Sum() {
           </div>
         </div>
       </div>
-    </div>
-    
+    </Container>
     </>
   )
 }
