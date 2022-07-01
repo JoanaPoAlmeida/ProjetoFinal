@@ -63,8 +63,8 @@ export const SidebarLink = styled(LinkS)`
     cursor: pointer;
 
     &:hover {
-        color: #01bf71;
-        transition: 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        color: #889aa5;
     }
 `
 

@@ -32,7 +32,7 @@ function Entity() {
 
 
   return (
-    <div classname="body">
+    <div className="body">
     <div className="container">
       <div className="row p-2">
         <p>The Named-entity recognition is ... </p>
