@@ -6,6 +6,7 @@ from gensim.summarization import summarize
 from polyglot.text import Text
 import pyodbc
 from langdetect import detect
+from multi_rake import Rake
 
 
 # Create an application instance
@@ -41,7 +42,8 @@ def keyword():
 		return ""
 	else:
 		print(keywrds)
-		key = keywords(keywrds).replace('\n','#')
+		rake = Rake()
+		key = rake.apply(keywrds)
 		print("this is keywords", key)
 		print("this is body", keywrds)
 		return jsonify(key)
@@ -91,6 +93,15 @@ def POS():
 		print(aux)
 		return jsonify(aux)
 	
+@app.route("/Sentilex", methods=['POST'])
+def Sentilex():
+	global body
+	body = request.json['body']
+	if body == "":
+		return ""
+	else:
+		#INSERIR ANALISE DE SENTIMENTOS AQUI
+		return jsonify(aux)
 
 
 

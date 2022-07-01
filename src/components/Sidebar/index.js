@@ -21,7 +21,7 @@ const Sidebar = ({ isOpen, toggle}) => {
                     Entity
                 </SidebarLink> 
                 <SidebarLink to="/Keywords" onClick={toggle}>
-                    Keywords
+                    Multi-Rake
                 </SidebarLink>
                 <SidebarLink to="/LangDetect" onClick={toggle}>
                     Language Detect
@@ -31,6 +31,9 @@ const Sidebar = ({ isOpen, toggle}) => {
                 </SidebarLink>
                 <SidebarLink to='/Sum' onClick={toggle}>
                     Summarization
+                </SidebarLink>
+                <SidebarLink to='/Sentilex' onClick={toggle}>
+                    Sentiment Analysis
                 </SidebarLink>
             </SidebarMenu>
         </SidebarWrapper>

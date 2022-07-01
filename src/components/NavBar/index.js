@@ -26,7 +26,7 @@ const Navbar = ({ toggle }) => {
             Named Entity Recognition
           </NavLink>
           <NavLink to='/Keywords' activestyle="true">
-            Keywords
+            Multi-Rake
           </NavLink>
           <NavLink to='/LangDetect' activestyle="true">
             Language Detection
@@ -36,6 +36,9 @@ const Navbar = ({ toggle }) => {
           </NavLink>
           <NavLink to='/Sum' activestyle="true">
             Summarization
+          </NavLink>
+          <NavLink to='/Sentilex' activestyle="true">
+            Sentiment Analysis
           </NavLink>
         </NavMenu>
           {/* Second Nav */}

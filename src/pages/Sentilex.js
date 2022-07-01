@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { useState,useEffect } from 'react'
 import APIService from '../components/APIService'
 import '../App.css'
-function Keywords() {
+function Sentilex() {
 
   //set default value to null
   const [ResFromServer, setResFromServer] = useState("");
@@ -11,7 +11,7 @@ function Keywords() {
   const [body, setBody] = useState('')
 
   const insertText = () =>{
-    APIService.InsertKeywords({body})
+    APIService.InsertSentilex({body})
     .then((response) => setShowText(response))
     .catch(error => console.log('error',error))
   }
@@ -33,7 +33,7 @@ function Keywords() {
     <>
     <div className="container">
       <div className="row p-2">
-        <p>Multi-Rake is a </p>
+        <p>Here you can analise a sentence of your choice </p>
         <p></p>
       </div>
       <div className="row p-3">
@@ -69,4 +69,4 @@ function Keywords() {
   )
 }
 
-export default Keywords
+export default Sentilex

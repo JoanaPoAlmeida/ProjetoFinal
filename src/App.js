@@ -13,6 +13,7 @@ import Team from './pages/Team';
 import Help from './pages/Help';
 import { FooterContainer } from './containers/footer'
 import { GlobalStyles } from './global-styles';
+import Sentilex from './pages/Sentilex';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path='/Sum' element={<Sum/>}/>
           <Route path='/Team' element={<Team/>}/>
           <Route path='/Help' element={<Help/>}/>
+          <Route path='/Sentilex' element={<Sentilex/>}/>
         </Routes>
       </Router>
       <FooterContainer />

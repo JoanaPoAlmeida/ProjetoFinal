@@ -47,7 +47,7 @@ function Entity() {
           <label htmlFor="body" className="form-label">Insert your text here</label>
           <textarea 
           className="form-control" 
-          placeholder ="Enter body" 
+          placeholder ="Enter text here" 
           rows='6'
           value={body}
           onChange={TextArea}
