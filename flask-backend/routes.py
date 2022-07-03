@@ -1,6 +1,5 @@
 from flask import current_app,jsonify,request, Flask
-from app import create_app,db
-from models import Articles,articles_schema,article_schema
+from app import create_app
 from gensim.summarization import keywords
 from gensim.summarization import summarize
 from polyglot.text import Text
@@ -54,13 +53,17 @@ summ = ""
 def sum():
 	global summ
 	summ = request.json['body']
+	#Se não houver input
 	if summ == "":
 		return ""
 	else:
 		print(summ)
 		summar = summarize(summ)
-		print(summar)
-		return jsonify(summar)
+		#Se o texto sumarizado for nulo
+		if summar == "":
+			summar="The text is too short to summarize."
+	print(summar)
+	return jsonify(summar)
 
 
 summ = ""
@@ -75,6 +78,10 @@ def NER():
 		aux = ""
 		for entity in text.entities:
 			aux = aux + str(entity.tag) + " " + str(entity) + ""
+			print("before if" + aux)
+		if aux == "":
+			aux = "There are no entities"
+			
 		print(summ)
 		print(aux)
 		return jsonify(aux)
@@ -101,9 +108,9 @@ def Sentilex():
 		return ""
 	else:
 		#INSERIR ANALISE DE SENTIMENTOS AQUI
-		return jsonify(aux)
+		return jsonify(body)
 
 
 
 if __name__ == "__main__":
-	app.run(debug=True)
+	app.run(host='10.0.1.204', port=5000, debug=True)

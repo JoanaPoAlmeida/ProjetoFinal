@@ -3,6 +3,9 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { useState,useEffect } from 'react'
 import APIService from '../components/APIService'
 import '../App.css'
+import { TripleMaze } from 'react-spinner-animated';
+import 'react-spinner-animated/dist/index.css'
+
 function Entity() {
 
   
@@ -10,10 +13,13 @@ function Entity() {
   const [ResFromServer, setResFromServer] = useState("");
   const [showText, setShowText] = useState("");
   const [body, setBody] = useState('')
+  const [spinner, setSpinner] = useState(false);
 
   const insertText = () =>{
+    setSpinner(true);
     APIService.InsertEntity({body})
     .then((response) => setShowText(response))
+    .then((response) => setSpinner(false))
     .catch(error => console.log('error',error))
   }
 
@@ -23,7 +29,6 @@ function Entity() {
     insertText()
     //setBody('')
     console.log("this is from handleSubmit", showText)
-    //window.location.reload(false);
   }
   const TextArea = (e) => {
     setBody(e.target.value)
@@ -31,8 +36,10 @@ function Entity() {
   }
 
 
+
+
   return (
-    <div classname="body">
+    <div className="body">
     <div className="container">
       <div className="row p-2">
         <p>The Named-entity recognition is ... </p>
@@ -60,10 +67,11 @@ function Entity() {
           >
           Send</button>
         </form>
-          <label className="form-label">Results:</label>
-          <div className="form-control">
-            <p>{showText}</p> 
-          </div>
+        {spinner && (
+        <div><TripleMaze/></div>
+        )}
+        {showText.length > 0 ? (<span><label className="form-label">Results:</label><div className="form-control"><p>{showText}</p> </div></span>) : null
+        }
         </div>
       </div>
     </div>

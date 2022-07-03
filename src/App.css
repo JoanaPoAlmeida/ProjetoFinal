@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
 
 * {
-  font-family: 'Sora', sans-serif;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body, html {
-  margin-bottom: 20pt;
+  height: 100%;
 }
 
 .App {
@@ -24,28 +24,19 @@ div.container {
   border-radius: 2px;
   padding: 25px 25px 25px 20px;
   background-color: #F0F0F0;
-  text-align: center;
+  text-align: -webkit-center;
   letter-spacing: 0.05em;
   line-height: 1.75;
   outline: 0;
   position: relative;
   text-decoration: none;
+
+ 
 }
-div.containerStart {
-  width: 80%;
-  height: 30%;
-  margin: 0 auto;
-  margin-top: 2%;
-  border-radius: 2px;
-  padding: 4rem 4rem 26rem 4rem;
-  background-color: #F0F0F0;
-  text-align: center;
-  letter-spacing: 0.05em;
-  line-height: 1.75;
-  outline: 0;
-  position: flex;
-  text-decoration: none;
-  z-index: 10;
+
+
+div.row p-2 {
+  text-transform: capitalize;
 }
 
 div.row p-2,
@@ -109,15 +100,18 @@ h2 {
   text-align: center;
 }
 .banner-text { width: 100%; }
-.banner-text img {
+.imgComputer{
   display: block;
   margin-left: auto;
   margin-right: auto;
   margin-top: 0;
   width: 80%;
 }
+.imgmobile{
+  display: none;
+}
 .banner-text h3 {
-  font: 18px/1.9em 'librebaskerville-regular', serif;
+  font-size: 3vh;
   color: #0C2340;
   margin: 0 auto;
   padding-top: 0%;
@@ -165,4 +159,83 @@ h2 {
 .button:hover {
   transition: all 0.2s ease-in-out;
   color: #889aa5;
+}
+
+.NavBtnLink {
+  border-radius: 4px;
+  background: #fefeff;
+  padding: 10px 22px;
+  color: #0d2240;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+
+  /* Second Nav */
+  margin-left: 24px;
+
+}
+.NavBtnLink:hover {
+  transition: all 0.2s ease-in-out;
+  color: #889aa5;
+}
+
+.Link {
+  text-decoration: none;
+  color: #F0F0F0;
+}
+
+.Link:hover{
+  color: #889aa5;
+}
+
+.SideBtnWrap{
+  border-radius: 50px;
+    background: #0C2340;
+    padding: 16px 64px;
+    color: #F0F0F0;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+}
+.SideBtnWrap:hover {
+        transition: all 0.2s ease-in-out;
+        background: #fff;
+        color: #010606;
+    }
+
+
+@media only screen and (max-width: 1060px){
+  div.container{
+    background-color: #f0f0f0;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: auto;
+    height: auto;
+  }
+  .imgmobile {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
+    width: 100%;
+  }
+  .imgcomputer{
+    display: none;
+  }
+  .banner-text h3 {
+    font-size: 2vh;
+    color: #0C2340;
+    margin: 0;
+    padding-top: 4%;
+    width: auto;
+    text-align: left;
+  }
+
+
+
 }

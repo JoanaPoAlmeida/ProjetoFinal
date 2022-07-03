@@ -13,7 +13,7 @@ export const SidebarContainer = styled.aside`
     align-items: center;
     top: 0;
     left: 0;
-    transiction: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
     opacity: ${({ isOpen}) => (isOpen ? '100%' : '0')};
     top: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
 `;
@@ -29,7 +29,7 @@ export const Icon = styled.div`
     top: 1.2rem;
     right: 1.5rem;
     background: transparent;
-    font-size:2rem;
+    font-size: 2rem;
     cursor: pointer;
     outline: none;
 `;
@@ -37,6 +37,9 @@ export const Icon = styled.div`
 //https://www.youtube.com/watch?v=Nl54MJDR2p8&t=0s min- 58:35
 export const SidebarWrapper = styled.div`
     color: #fff;
+    justify-content: center;
+    
+    
 `
 
 export const SidebarMenu = styled.ul`
@@ -44,13 +47,14 @@ export const SidebarMenu = styled.ul`
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, 80px);
     text-align: center;
+    padding-right: 2rem;
 
     @media screen and (max-width: 480px){
         grid-template-rows: repeat(6, 60px);
     }
 `
 
-export const SidebarLink = styled(LinkS)`
+export const SidebarLink = styled(LinkR)`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -63,7 +67,7 @@ export const SidebarLink = styled(LinkS)`
     cursor: pointer;
 
     &:hover {
-        color: #01bf71;
+        color: #889aa5;
         transition: 0.2s ease-in-out;
     }
 `
@@ -75,10 +79,10 @@ export const SideBtnWrap = styled.div`
 
 export const SidebarRoute = styled(LinkR)`
     border-radius: 50px;
-    background: #01bf71;
+    background: #0C2340;
     white-spaced: nowrap;
     padding: 16px 64px;
-    color: #010606;
+    color: #F0F0F0;
     font-size: 16px;
     outline: none;
     border: none;

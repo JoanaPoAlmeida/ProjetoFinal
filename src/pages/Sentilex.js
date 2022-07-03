@@ -3,16 +3,21 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { useState,useEffect } from 'react'
 import APIService from '../components/APIService'
 import '../App.css'
+import { TripleMaze } from 'react-spinner-animated';
+import 'react-spinner-animated/dist/index.css'
 function Sentilex() {
 
   //set default value to null
   const [ResFromServer, setResFromServer] = useState("");
   const [showText, setShowText] = useState("");
   const [body, setBody] = useState('')
+  const [spinner, setSpinner] = useState(false);
 
   const insertText = () =>{
+    setSpinner(true);
     APIService.InsertSentilex({body})
     .then((response) => setShowText(response))
+    .then((response) => setSpinner(false))
     .catch(error => console.log('error',error))
   }
 
@@ -58,10 +63,11 @@ function Sentilex() {
           >
           Send</button>
         </form>
-        <label className="form-label">Results:</label>
-          <div className="form-control">
-            <p>{showText}</p> 
-          </div>
+        {spinner && (
+        <div><TripleMaze/></div>
+        )}
+        {showText.length > 0 ? (<span><label className="form-label">Results:</label><div className="form-control"><p>{showText}</p> </div></span>) : null
+        }
         </div>
       </div>
     </div>

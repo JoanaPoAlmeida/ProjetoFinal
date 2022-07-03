@@ -4,7 +4,7 @@ export default class APIService{
 	// Insert a Text
 	
 	static InsertText(body){
-		return fetch(`http://localhost:5000/langDetect`,{
+		return fetch(`http://10.0.1.204:5000/langDetect`,{
       		'method':'POST',
       		 headers : {
       		'Content-Type':'application/json'
@@ -16,7 +16,7 @@ export default class APIService{
 	}
 
 	static InsertKeywords(body){
-		return fetch(`http://localhost:5000/keywords`,{
+		return fetch(`http://10.0.1.204:5000/keywords`,{
       		'method':'POST',
       		 headers : {
       		'Content-Type':'application/json'
@@ -28,7 +28,7 @@ export default class APIService{
 	}
 
 	static InsertSummary(body){
-		return fetch(`http://localhost:5000/summary`,{
+		return fetch(`http://10.0.1.204:5000/summary`,{
       		'method':'POST',
       		 headers : {
       		'Content-Type':'application/json'
@@ -40,7 +40,7 @@ export default class APIService{
 	}
 	
 	static InsertEntity(body){
-		return fetch(`http://localhost:5000/entity`,{
+		return fetch(`http://10.0.1.204:5000/entity`,{
       		'method':'POST',
       		 headers : {
       		'Content-Type':'application/json'
@@ -52,7 +52,7 @@ export default class APIService{
 	}
 
 	static InsertPOS(body){
-		return fetch(`http://localhost:5000/POS`,{
+		return fetch(`http://10.0.1.204:5000/POS`,{
       		'method':'POST',
       		 headers : {
       		'Content-Type':'application/json'
@@ -64,7 +64,7 @@ export default class APIService{
 	}
 
 	static InsertSentilex(body){
-		return fetch(`http://localhost:5000/Sentilex`,{
+		return fetch(`http://10.0.1.204:5000/Sentilex`,{
       		'method':'POST',
       		 headers : {
       		'Content-Type':'application/json'

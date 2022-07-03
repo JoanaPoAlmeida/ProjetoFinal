@@ -10,10 +10,10 @@ import Sum from './pages/Sum';
 import LangDetect from './pages/LangDetect';
 import Start from './pages/start';
 import Team from './pages/Team';
-import Help from './pages/Help';
 import { FooterContainer } from './containers/footer'
 import { GlobalStyles } from './global-styles';
 import Sentilex from './pages/Sentilex';
+import API from './pages/API';
 
 
 function App() {
@@ -31,7 +31,7 @@ function App() {
           <Route path='/LangDetect' element={<LangDetect/>}/>
           <Route path='/Sum' element={<Sum/>}/>
           <Route path='/Team' element={<Team/>}/>
-          <Route path='/Help' element={<Help/>}/>
+          <Route path='/API' element={<API />}/>
           <Route path='/Sentilex' element={<Sentilex/>}/>
         </Routes>
       </Router>

@@ -26,7 +26,7 @@ const Navbar = ({ toggle }) => {
             Named Entity Recognition
           </NavLink>
           <NavLink to='/Keywords' activestyle="true">
-            Multi-Rake
+            Keywords
           </NavLink>
           <NavLink to='/LangDetect' activestyle="true">
             Language Detection
@@ -43,9 +43,9 @@ const Navbar = ({ toggle }) => {
         </NavMenu>
           {/* Second Nav */}
           <NavBtn>
-            <NavBtnLink to='/Help' activestyle="true">
-              Help
-            </NavBtnLink>
+            <a href='http://hultigcorpus-api.di.ubi.pt/' target="_blank" activestyle="true" className='NavBtnLink'>
+              API
+            </a>
             <NavBtnLink to='/Team' activestyle="true">
               Team
             </NavBtnLink>

@@ -4,6 +4,8 @@ import { useState,useEffect } from 'react'
 import Form from '../components/Form'
 import DisplayText from '../components/DisplayText';
 import APIService from '../components/APIService'
+import { TripleMaze } from 'react-spinner-animated';
+import 'react-spinner-animated/dist/index.css'
 
 
 function LangDetect() {
@@ -11,25 +13,13 @@ function LangDetect() {
   const [ResFromServer, setResFromServer] = useState("");
   const [showText, setShowText] = useState("");
   const [body, setBody] = useState('')
-
-  
-  /*
-  //fetch data from flask and set it to langdetect
-  useEffect((props)=>{
-    fetch('http://localhost:5000/langDetect',{
-      'methods':'GET',
-      headers : {
-        'Content-Type':'application/json',
-        'Accept': 'application/json'
-      }
-    })
-    .then(response => response.json())
-    .catch(error => console.log(error))
-  },[])*/
+  const [spinner, setSpinner] = useState(false);
 
   const insertText = () =>{
+    setSpinner(true);
     APIService.InsertText({body})
     .then((response) => setShowText(response))
+    .then((response) => setSpinner(false))
     .catch(error => console.log('error',error))
   }
 
@@ -37,8 +27,7 @@ function LangDetect() {
   const handleSubmit=(event)=>{ 
     event.preventDefault()
     insertText()
-    setBody('')
-    
+    //setBody('')
     console.log("this is from handleSubmit", ResFromServer)
     //window.location.reload(false);
   }
@@ -78,9 +67,11 @@ pt, ro, ru, sk, sl, so, sq, sv, sw, ta, te, th, tl, tr, uk, ur, vi, zh-cn, zh-tw
           >
           Send</button>
         </form>
-        <div className="row p-4">
-          <h3>The textcode language is: {showText} </h3>
-        </div>
+        {spinner && (
+        <div><TripleMaze/></div>
+        )}
+        {showText.length > 0 ? (<span><label className="form-label">Results:</label><div className="form-control"><p>{showText}</p> </div></span>) : null
+        }
         </div>
       </div>
     </div>

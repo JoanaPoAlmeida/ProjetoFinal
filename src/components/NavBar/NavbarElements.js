@@ -7,11 +7,12 @@ export const Nav = styled.nav`
   height: 80px;
   display: flex;
   justify-content: space-between;
-  padding: 1rem calc((100vw - 1000px) / 2);
   z-index: 10;
+  margin-left: 2%
 
   &img {
     height: 100%;
+    width: 150px;
   }
   /* Third Nav */
   /* justify-content: flex-start; */
@@ -25,6 +26,9 @@ export const NavLink = styled(Link)`
   padding: 0 0.5rem;
   height: 90%;
   cursor: pointer;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  letter-spacing: 0.2vh;
 
   &.active {
     color: #889aa5;
@@ -33,9 +37,10 @@ export const NavLink = styled(Link)`
     transition: all 0.2s ease-in-out;
     color: #889aa5;
   }
-  &.SecondNav {
-    color: red;
-    align-items: right;
+  &img {
+    align-items: left;
+    margin-left: 0%;
+    width: 150px;
   }
 `;
 
@@ -67,7 +72,7 @@ export const NavMenu = styled.div`
   /* width: 100vw;
   white-space: nowrap; */
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1060px) {
     display: none;
   }
 `;
@@ -75,13 +80,13 @@ export const NavMenu = styled.div`
 export const NavBtn = styled.nav`
   display: flex;
   align-items: center;
-  margin-right: 0;
+  margin-right: 1%;
 
   /* Third Nav */
   /* justify-content: flex-end;
   width: 100vw; */
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1060px) {
     display: none;
   }
 `;
@@ -96,6 +101,7 @@ export const NavBtnLink = styled(Link)`
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
+  text-transform: uppercase;
 
   /* Second Nav */
   margin-left: 24px;
@@ -109,7 +115,7 @@ export const NavBtnLink = styled(Link)`
 export const MobileIcon = styled.div`
   display: none;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1060px) {
     display: block;
     position: absolute;
     color: white;

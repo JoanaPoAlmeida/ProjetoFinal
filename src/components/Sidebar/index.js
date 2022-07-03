@@ -6,8 +6,11 @@ import {
     CloseIcon, 
     SidebarWrapper, 
     SidebarLink,  
-    SidebarMenu
+    SidebarMenu,
+    SidebarRoute,
+    SideBtnWrap
 } from './SidebarElements'
+import '../../App.css'
 
 const Sidebar = ({ isOpen, toggle}) => {
   return (
@@ -36,6 +39,14 @@ const Sidebar = ({ isOpen, toggle}) => {
                     Sentiment Analysis
                 </SidebarLink>
             </SidebarMenu>
+            <SideBtnWrap>
+                <a href='http://hultigcorpus-api.di.ubi.pt/' target="_blank" activestyle="true" className='SideBtnWrap'>
+                API
+                </a>
+                <SidebarRoute to="/Team">
+                    Team
+                </SidebarRoute>
+            </SideBtnWrap>
         </SidebarWrapper>
     </SidebarContainer>
   )
