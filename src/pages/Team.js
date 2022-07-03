@@ -62,7 +62,7 @@ function Team() {
                     <Card className='Card' style={{ width: '18rem' }}>
                         <Card.Img variant="top" src={require('../images/person.png')} />
                         <Card.Body>
-                            <Card.Title>GAËL Dias</Card.Title>
+                            <Card.Title>Gaël Dias</Card.Title>
                             <Card.Text>
                                 {/*This card has supporting text below as a natural lead-in to additional content.{' '}*/}
                             </Card.Text>
