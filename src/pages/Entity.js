@@ -42,7 +42,8 @@ function Entity() {
     <div className="body">
     <div className="container">
       <div className="row p-2">
-        <p>The Named-entity recognition is ... </p>
+        <h3>Named Entity Recognition</h3>
+        <p>The Named-entity recognition extracts information from an unstructured text and will locate and classify named entities into pre-defined categories</p>
         <p></p>
       </div>
       <div className="row p-3">

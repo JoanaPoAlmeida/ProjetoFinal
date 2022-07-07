@@ -8,7 +8,7 @@ function Team() {
   return (
     <>
     <h2> This is our Team </h2>
-    <Container>
+    <div className='container'>
         <CardGroup>
             <Row md={4}>
                 <Col>
@@ -24,7 +24,7 @@ function Team() {
                 </Col>
                 <Col>
                     <Card className='Card' style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={require('../images/person.png')} />
+                        <Card.Img variant="top" src={require('../images/francisco.jpg')} />
                         <Card.Body>
                             <Card.Title>Francisco Oliveira</Card.Title>
                         </Card.Body>
@@ -35,7 +35,7 @@ function Team() {
                 </Col>
                 <Col>
                     <Card className='Card' style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={require('../images/person.png')} />
+                        <Card.Img variant="top" src={require('../images/SP.jpg')} />
                         <Card.Body>
                             <Card.Title>Sebastião Pais</Card.Title>
                         </Card.Body>
@@ -46,7 +46,7 @@ function Team() {
                 </Col>
                 <Col>
                     <Card className='Card' style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={require('../images/person.png')} />
+                        <Card.Img variant="top" src={require('../images/JPC.jpg')} />
                         <Card.Body>
                             <Card.Title>João Cordeiro</Card.Title>
                             <Card.Text>
@@ -60,7 +60,7 @@ function Team() {
                 </Col>
                 <Col>
                     <Card className='Card' style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={require('../images/person.png')} />
+                        <Card.Img variant="top" src={require('../images/GD.jpg')} />
                         <Card.Body>
                             <Card.Title>Gaël Dias</Card.Title>
                             <Card.Text>
@@ -74,7 +74,7 @@ function Team() {
                 </Col>
             </Row>
         </CardGroup>
-    </Container>
+    </div>
     </>
   )
 }

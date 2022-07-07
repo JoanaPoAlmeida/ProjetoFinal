@@ -19,24 +19,24 @@ const Sidebar = ({ isOpen, toggle}) => {
             <CloseIcon />
         </Icon>
         <SidebarWrapper>
-            <SidebarMenu>
-               <SidebarLink to="/Entity" onClick={toggle}>
-                    Entity
-                </SidebarLink> 
+            <SidebarMenu> 
                 <SidebarLink to="/Keywords" onClick={toggle}>
-                    Multi-Rake
+                    Keywords
                 </SidebarLink>
                 <SidebarLink to="/LangDetect" onClick={toggle}>
-                    Language Detect
+                    Language Detection
+                </SidebarLink>
+                <SidebarLink to="/Entity" onClick={toggle}>
+                    Named-Entity Recognition
                 </SidebarLink>
                 <SidebarLink to="/POS" onClick={toggle}>
                     Part of Speech
                 </SidebarLink>
-                <SidebarLink to='/Sum' onClick={toggle}>
-                    Summarization
-                </SidebarLink>
                 <SidebarLink to='/Sentilex' onClick={toggle}>
                     Sentiment Analysis
+                </SidebarLink>
+                <SidebarLink to='/Sum' onClick={toggle}>
+                    Summarization
                 </SidebarLink>
             </SidebarMenu>
             <SideBtnWrap>

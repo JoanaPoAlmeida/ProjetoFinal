@@ -40,8 +40,9 @@ function Sum() {
     <>
     <Container>
       <div className="row p-2">
-        <p>The gemsin.summarization is a </p>
-        <p></p>
+        <h3>Summarization</h3>
+        <p>The Summarization service will summarize the inserted text. It can be inserted many languages as this service is multilingual</p>
+        <p>If the text is too short it won't be able to summarize and will return a message that will tell you so.</p>
       </div>
       <div className="row p-3">
         <div className="text-center"> 

@@ -5,7 +5,8 @@ export const Container = styled.div`
   margin-bottom: 0;
   padding-top: 15pt;
   padding-bottom: 15pt;
-  position:absolute;
+  position: absolute;
+  display: block;
   left:0;
   bottom:0;
   right:0;

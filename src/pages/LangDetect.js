@@ -40,10 +40,9 @@ function LangDetect() {
     <>
     <div className="container">
       <div className="row p-2">
-        <p>The langdetect library is a re-implementation of Google's language-detection library from Java to Python. It suports 55 languages:</p>
-        <p className='languages'>af, ar, bg, bn, ca, cs, cy, da, de, el, en, es, et, fa, fi, fr, gu, he,
-hi, hr, hu, id, it, ja, kn, ko, lt, lv, mk, ml, mr, ne, nl, no, pa, pl,
-pt, ro, ru, sk, sl, so, sq, sv, sw, ta, te, th, tl, tr, uk, ur, vi, zh-cn, zh-tw</p>
+        <h3>Language Detection</h3>
+        <p>The language detection service will return the code of the language of the inserted text. </p>
+        <p>This service is multilingual and supports 55 languages.</p>
       </div>
       <div className="row p-3">
         <div className="text-center"> 

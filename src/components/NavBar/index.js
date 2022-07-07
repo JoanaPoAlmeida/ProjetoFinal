@@ -22,23 +22,23 @@ const Navbar = ({ toggle }) => {
           <FaBars />
         </MobileIcon>
         <NavMenu>
-          <NavLink to='/Entity' activestyle="true">
-            Named Entity Recognition
-          </NavLink>
           <NavLink to='/Keywords' activestyle="true">
             Keywords
           </NavLink>
           <NavLink to='/LangDetect' activestyle="true">
             Language Detection
           </NavLink>
+          <NavLink to='/Entity' activestyle="true">
+            Named Entity Recognition
+          </NavLink>
           <NavLink to='/POS' activestyle="true">
             Part of Speech
           </NavLink>
-          <NavLink to='/Sum' activestyle="true">
-            Summarization
-          </NavLink>
           <NavLink to='/Sentilex' activestyle="true">
             Sentiment Analysis
+          </NavLink>
+          <NavLink to='/Sum' activestyle="true">
+            Summarization
           </NavLink>
         </NavMenu>
           {/* Second Nav */}

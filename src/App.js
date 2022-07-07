@@ -35,7 +35,9 @@ function App() {
           <Route path='/Sentilex' element={<Sentilex/>}/>
         </Routes>
       </Router>
-      <FooterContainer />
+      <div className='footer'>
+        <p>Copyright ©2022 All rights reserved by : <a href='http://hultigcorpus.di.ubi.pt/index_eng.html' target="_blank" className='Link' > Hultig-C</a></p>
+      </div>
       
       
     </>

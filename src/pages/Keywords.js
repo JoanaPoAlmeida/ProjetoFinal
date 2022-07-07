@@ -49,9 +49,10 @@ function Keywords() {
     <>
     <div className="container">
       <div className="row p-2">
-        <h2><b>Keywords</b></h2>
-        <p>Insert here your text to discover the keywords. This service is multilingual.</p>
-        <p></p>
+        <h3><b>Keywords</b></h3>
+        <p>This service will detect that keywords in the inserted text and return it.</p>
+        <p>The Keywords Service is multilingual</p>
+        {/*if the service can't find any keywords it will return a message*/}
       </div>
       <div className="row p-3">
         <div className="text-center"> 

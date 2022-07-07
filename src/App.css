@@ -9,11 +9,13 @@
 
 body, html {
   height: 100%;
+  
 }
 
 .App {
   min-height: 100vh;
   background-color: #fcf7f7;
+  
 }
 
 div.container {
@@ -30,7 +32,7 @@ div.container {
   outline: 0;
   position: relative;
   text-decoration: none;
-
+  
  
 }
 
@@ -207,7 +209,31 @@ h2 {
         background: #fff;
         color: #010606;
     }
+div.card-img {
+  width: 300px;
+}
 
+.footer{
+  border-top: '1px solid #ddd';
+  padding: 2vh;
+  height: 10vh;
+  line-height: '10vh';
+  background: radial-gradient(circle, rgba(13, 34, 64, 1) 0%, rgba(19, 46, 84,1) 100%);
+  position: relative;
+  left:0;
+  bottom:0;
+  right:0;
+}
+.footer p{
+  color: rgba(255, 255, 255, 0.90);
+  margin-bottom: 0px;
+  text-decoration: none;
+  font-size: 1em;
+  display: block;
+  flex-direction: column;
+  text-align: center;
+  margin-left: auto;
+}
 
 @media only screen and (max-width: 1060px){
   div.container{
@@ -235,7 +261,11 @@ h2 {
     width: auto;
     text-align: left;
   }
-
+  p {
+    text-align: left;
+    font-size: 0.8rem;
+    margin-bottom: 1%;
+  }
 
 
 }

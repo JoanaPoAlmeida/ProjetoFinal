@@ -38,6 +38,7 @@ function Sentilex() {
     <>
     <div className="container">
       <div className="row p-2">
+        <h3>Sentiment Analysis</h3>
         <p>Here you can analise a sentence of your choice </p>
         <p></p>
       </div>
