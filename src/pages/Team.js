@@ -10,7 +10,7 @@ function Team() {
         <div className="ro">
             <div className="column">
                 <div className="card">
-                    <img src={require('../images/person.png')} alt="Joana"/>
+                    <img src={require('../images/joana.jpeg')} alt="Joana"/>
                     <div className="containr">
                         <h2>Joana Paulo Almeida</h2>
                         <p className="title">Student</p>
