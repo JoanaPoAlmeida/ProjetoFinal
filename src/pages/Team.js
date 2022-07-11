@@ -33,7 +33,7 @@ function Team() {
             </div>
         </div>
         <div className="ro">
-            <div className="column">
+            <div className="column-2">
                 <div className="card">
                 <img src={require('../images/SP.jpg')} alt="SP"/>
                     <div className="containr">
@@ -45,7 +45,7 @@ function Team() {
                 </div>
             </div>
   
-            <div className="column">
+            <div className="column-2">
                 <div className="card">
                 <img src={require('../images/JPC.jpg')} alt="JP" height="30%"/>
                     <div className="containr">
@@ -57,7 +57,7 @@ function Team() {
                 </div>
             </div>
   
-            <div className="column">
+            <div className="column-2">
                 <div className="card">
                     <img src={require('../images/GD.jpg')} alt="GD"/>
                     <div className="containr">

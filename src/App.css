@@ -260,12 +260,23 @@ html {
 
 .ro{
   height: 100%;
+  display: flex;
 }
 .column {
   float: left;
-  width: 33.3%;
+  width: 25%;
   margin-bottom: 16px;
   padding: 0 8px;
+  margin-right: 8.3%;
+  margin-left: 8.3%;
+}
+.column-2 {
+  float: left;
+    width: 33%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+    margin-right: 4.1%;
+    margin-left: 4.1%;
 }
 
 .card {
@@ -286,8 +297,16 @@ html {
   display: table;
 }
 
+.containr h2 {
+  font-size: 1.5rem;
+}
+.containr p {
+  font-size: 1rem;
+}
+
 .title {
   color: grey;
+  font-size: 1.2rem;
 }
 
 .button {
@@ -300,6 +319,8 @@ html {
   text-align: center;
   cursor: pointer;
   width: 100%;
+}
+.button a {
   text-decoration: none;
   color: #F0F0F0;
 }
