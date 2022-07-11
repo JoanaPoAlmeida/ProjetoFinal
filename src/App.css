@@ -264,11 +264,11 @@ html {
 }
 .column {
   float: left;
-  width: 25%;
+  width: 28%;
   margin-bottom: 16px;
   padding: 0 8px;
-  margin-right: 8.3%;
-  margin-left: 8.3%;
+  margin-right: auto;
+  margin-left: auto;
 }
 .column-2 {
   float: left;
@@ -309,7 +309,7 @@ html {
   font-size: 1.2rem;
 }
 
-.button {
+.button-a {
   border: none;
   outline: 0;
   display: inline-block;
@@ -320,12 +320,12 @@ html {
   cursor: pointer;
   width: 100%;
 }
-.button a {
+.button-a a {
   text-decoration: none;
   color: #F0F0F0;
 }
 
-.button:hover {
+.button-a:hover {
   background-color: #555;
 }
 
@@ -362,6 +362,17 @@ html {
   }
   .column {
     width: 100%;
+    display: block;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .column-2 {
+    width: 100%;
+    display: block;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .ro{
     display: block;
   }
 
