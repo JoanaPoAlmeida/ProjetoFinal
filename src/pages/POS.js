@@ -76,11 +76,9 @@ function POS() {
         {spinner && (
         <div><TripleMaze/></div>
         )}
-        <div className="row p-4">
-        {showText.length > 0 ? (<span><label className="form-label">Results:</label><div className="form-control"><p>{JSON.stringify(showText)}</p> </div></span>) : null
+        {showText.length > 0 ? (<span><label className="form-label">Results:</label><textarea className="form-control" value={showText/*.map((text) => <li>{text}</li>)*/} rows='6'></textarea></span>) : null
         }
          
-        </div>
         </div>
       </div>
     </div>

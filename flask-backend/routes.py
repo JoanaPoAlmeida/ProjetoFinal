@@ -1,4 +1,4 @@
-from flask import current_app,jsonify,request, Flask
+from flask import current_app,jsonify,request, Flask, make_response
 from app import create_app
 from gensim.summarization import keywords
 from gensim.summarization import summarize
@@ -29,8 +29,6 @@ def lang():
 		return ""
 	else:
 		lang = detect(body)
-		#print("this is lang", lang)
-		#print("this is body", body)
 		return jsonify(lang)
 
 
@@ -43,11 +41,9 @@ def keyword():
 	if keywrds == "":
 		return ""
 	else:
-		#print(keywrds)
 		rake = Rake()
 		key = rake.apply(keywrds)
-		#print("this is keywords", key)
-		#print("this is body", keywrds)
+		print(key)
 		return jsonify(key)
 
 

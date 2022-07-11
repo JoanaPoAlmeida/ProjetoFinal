@@ -71,7 +71,7 @@ function Entity() {
         {spinner && (
         <div><TripleMaze/></div>
         )}
-        {showText.length > 0 ? (<span><label className="form-label">Results:</label><div className="form-control"><p>{showText}</p> </div></span>) : null
+        {showText.length > 0 ? (<span><label className="form-label">Results:</label><textarea className="form-control" value={showText/*.map((text) => <li>{text}</li>)*/}></textarea></span>) : null
         }
         </div>
       </div>

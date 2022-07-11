@@ -1,26 +1,21 @@
-import React from 'react';
-import { Container, Wrapper, Row, Column, Link, Title } from './FooterStyles';
+import React from "react";
+import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 
-export default function Footer({ children, ...restProps }) {
-  return <Container {...restProps}>{children}</Container>;
+const FooterPage = () => {
+  return (
+    <MDBFooter color="blue" className="font-small pt-4 mt-4">
+      <MDBContainer fluid className="text-center text-md-left">
+        <MDBRow>
+          
+        </MDBRow>
+      </MDBContainer>
+      <div className="footer-copyright text-center py-3">
+        <MDBContainer fluid>
+          &copy; {new Date().getFullYear()} Copyright: <a href="https://www.mdbootstrap.com"> MDBootstrap.com </a>
+        </MDBContainer>
+      </div>
+    </MDBFooter>
+  );
 }
 
-Footer.Wrapper = function FooterWrapper({children, ...restProps}) {
-  return <Wrapper {...restProps}>{children}</Wrapper>
-}
-
-Footer.Row = function FooterRow({ children, ...restProps }) {
-  return <Row {...restProps}>{children}</Row>;
-};
-
-Footer.Column = function FooterColumn({ children, ...restProps }) {
-  return <Column {...restProps}>{children}</Column>;
-};
-
-Footer.Link = function FooterLink({ children, ...restProps }) {
-  return <Link {...restProps}>{children}</Link>;
-};
-
-Footer.Title = function FooterTitle({ children, ...restProps }) {
-  return <Title {...restProps}>{children}</Title>;
-};
+export default FooterPage;

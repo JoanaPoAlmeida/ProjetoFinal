@@ -1,81 +1,78 @@
 import React from 'react'
-import Card from 'react-bootstrap/Card'
-import CardGroup from 'react-bootstrap/CardGroup'
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
+import '../App.css'
 function Team() {
   return (
     <>
-    <h2> This is our Team </h2>
     <div className='container'>
-        <CardGroup>
-            <Row md={4}>
-                <Col>
-                    <Card className='Card' style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={require('../images/person.png')} />
-                        <Card.Body>
-                            <Card.Title className='upperCase'>Joana Almeida</Card.Title>
-                        </Card.Body>
-                            <Card.Footer>
-                                <small className="text-muted">Student</small>
-                            </Card.Footer>
-                    </Card>
-                </Col>
-                <Col>
-                    <Card className='Card' style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={require('../images/francisco.jpg')} />
-                        <Card.Body>
-                            <Card.Title>Francisco Oliveira</Card.Title>
-                        </Card.Body>
-                        <Card.Footer>
-                            <small className="text-muted">Student</small>
-                        </Card.Footer>
-                    </Card>
-                </Col>
-                <Col>
-                    <Card className='Card' style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={require('../images/SP.jpg')} />
-                        <Card.Body>
-                            <Card.Title>Sebastião Pais</Card.Title>
-                        </Card.Body>
-                        <Card.Footer>
-                            <small className="text-muted">Professor Assistant at UBI</small>
-                        </Card.Footer>
-                    </Card>
-                </Col>
-                <Col>
-                    <Card className='Card' style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={require('../images/JPC.jpg')} />
-                        <Card.Body>
-                            <Card.Title>João Cordeiro</Card.Title>
-                            <Card.Text>
-                                {/*This card has supporting text below as a natural lead-in to additional content.{' '}*/}
-                            </Card.Text>
-                        </Card.Body>
-                        <Card.Footer>
-                            <small className="text-muted">Professor Assistant at UBI</small>
-                        </Card.Footer>
-                    </Card>
-                </Col>
-                <Col>
-                    <Card className='Card' style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={require('../images/GD.jpg')} />
-                        <Card.Body>
-                            <Card.Title>Gaël Dias</Card.Title>
-                            <Card.Text>
-                                {/*This card has supporting text below as a natural lead-in to additional content.{' '}*/}
-                            </Card.Text>
-                        </Card.Body>
-                        <Card.Footer>
-                            <small className="text-muted">Professor Assistant at UBI</small>
-                        </Card.Footer>
-                    </Card>
-                </Col>
-            </Row>
-        </CardGroup>
+        <h2>Meet The Team</h2>
+        <p>Resize the browser window to see the effect.</p>
+        <br/>
+
+        <div className="ro">
+            <div className="column">
+                <div className="card">
+                    <img src={require('../images/person.png')} alt="Joana"/>
+                    <div className="containr">
+                        <h2>Joana Paulo Almeida</h2>
+                        <p className="title">Student</p>
+                        <p>Computer Science Student</p>
+                        <p><button className="button">LinkedIn</button></p>
+                    </div>
+                </div>
+            </div>
+
+            <div className="column">
+                <div className="card">
+                    <img src={require('../images/francisco.jpg')} alt="Francisco"/>
+                    <div className="containr">
+                        <h2>Francisco Oliveira</h2>
+                        <p className="title">Student</p>
+                        <p>Computer Science Student</p>
+                        <p><button className="button">LinkedIn</button></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div className="ro">
+            <div className="column">
+                <div className="card">
+                <img src={require('../images/SP.jpg')} alt="SP"/>
+                    <div className="containr">
+                        <h2>John Doe</h2>
+                        <p className="title">Sebastião Pais</p>
+                        <p>Professor Assistant at UBI</p>
+                        <p><button className="button">Contact</button></p>
+                    </div>
+                </div>
+            </div>
+  
+            <div className="column">
+                <div className="card">
+                <img src={require('../images/JPC.jpg')} alt="JP"/>
+                    <div className="containr">
+                        <h2>João Cordeiro</h2>
+                        <p className="title">Professor</p>
+                        <p>Professor Assistant at UBI</p>
+                        <p><button className="button">Contact</button></p>
+                    </div>
+                </div>
+            </div>
+  
+            <div className="column">
+                <div className="card">
+                    <img src={require('../images/GD.jpg')} alt="GD"/>
+                    <div className="containr">
+                        <h2>Gaël Dias</h2>
+                        <p className="title">Professor</p>
+                        <p>Full Professor at University of Caen Normandie</p>
+                        <p><button className="button">Contact</button></p>
+                    </div>
+                </div>
+            </div>
+  
+        </div>
     </div>
-    </>
+</>
   )
 }
 

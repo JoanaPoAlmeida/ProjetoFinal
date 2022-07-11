@@ -13,16 +13,17 @@ body, html {
 }
 
 .App {
-  min-height: 100vh;
+  min-height: 100%;
   background-color: #fcf7f7;
-  
+  position: absolute;
+  height: 80%;
 }
 
 div.container {
   margin-top: 5vh;
   margin-bottom: 5vh;
   width: 80%;
-  height: 30%;
+  height: 50%;
   border-radius: 2px;
   padding: 25px 25px 25px 20px;
   background-color: #F0F0F0;
@@ -213,6 +214,18 @@ div.card-img {
   width: 300px;
 }
 
+.response {
+  line-height: 1.5;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  resize: vertical;
+  text-align: left;
+  padding: 0 0;
+}
+
 .footer{
   border-top: '1px solid #ddd';
   padding: 2vh;
@@ -223,6 +236,7 @@ div.card-img {
   left:0;
   bottom:0;
   right:0;
+  margin-top: 10%;
 }
 .footer p{
   color: rgba(255, 255, 255, 0.90);
@@ -233,6 +247,60 @@ div.card-img {
   flex-direction: column;
   text-align: center;
   margin-left: auto;
+}
+
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width:100%;
+}
+
+.containr {
+  padding: 0 16px;
+}
+
+.containr::after, .ro::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
 }
 
 @media only screen and (max-width: 1060px){
@@ -265,6 +333,10 @@ div.card-img {
     text-align: left;
     font-size: 0.8rem;
     margin-bottom: 1%;
+  }
+  .column {
+    width: 100%;
+    display: block;
   }
 
 

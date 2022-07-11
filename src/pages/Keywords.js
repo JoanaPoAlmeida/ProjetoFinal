@@ -20,6 +20,8 @@ function Keywords() {
     .then((response) => setShowText(response))
     .then((response) => setSpinner(false))
     .catch(error => console.log('error',error))
+
+    console.log(showText)
   }
 
   //insere o texto, limpa o form e atualiza a pagina
@@ -27,7 +29,6 @@ function Keywords() {
     event.preventDefault()
     insertText()
     //setBody('')
-    console.log("this is from handleSubmit", showText)
   }
   const TextArea = (e) => {
     setBody(e.target.value)
@@ -79,10 +80,10 @@ function Keywords() {
         {spinner && (
         <div><TripleMaze/></div>
         )}
-        {showText.length > 0 ? (<span><label className="form-label">Results:</label><div className="form-control"><p>{showText}</p> </div></span>) : null
+        {showText.length > 0 ? (<span><label className="form-label">Results:</label><textarea className="form-control" value={showText/*.map((text) => <li>{text}</li>)*/}></textarea></span>) : null
         }
 
-        <button onClick={downloadTxtFile}>Download txt</button>
+        {/*<button onClick={downloadTxtFile}>Downloa</button>*/}
         
         </div>
       </div>
